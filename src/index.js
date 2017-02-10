@@ -6,4 +6,4 @@
 // import { iImportLodash } from './i_import_lodash.js';
 System.import('./i_import_lodash.js');
 
-const iAm = 'index.js';
+var iAm = 'index.js';

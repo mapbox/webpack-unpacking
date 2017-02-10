@@ -29,45 +29,6 @@ const baseConfig = {
   },
   module: {
     loaders: [
-      {
-        test: /\.jsx?$/,
-        loader: 'babel-loader',
-        include: [
-          path.resolve(__dirname, './src'),
-        ],
-        query: {
-          // https://github.com/babel/babel-loader#options
-          cacheDirectory: isDebug,
-          babelrc: false,
-          presets: ['es2015', 'stage-0', 'react'].concat(isDebug ? [] : ['react-optimize']),
-          plugins: [
-            'lodash',
-            // Externalise references to helpers.
-            // Leave the regenerator and polyfill out (will need to add these back in
-            // if we need core-js or generators & async/await)
-            // https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-runtime
-            [
-              'transform-runtime',
-              {
-                helpers: true, // defaults to true
-                polyfill: false, // defaults to true
-                regenerator: false // defaults to true
-              }
-            ]
-          ].concat(
-            !isDebug
-              ? []
-              : [
-                  // Adds component stack to warning messages
-                  // https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-react-jsx-source
-                  'transform-react-jsx-source',
-                  // Adds __self attribute to JSX which React will use for some warnings
-                  // https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-react-jsx-self
-                  'transform-react-jsx-self'
-                ]
-          )
-        }
-      }
     ]
   },
   plugins: [

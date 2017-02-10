@@ -1,5 +1,5 @@
-import _ from 'lodash';
+var _ = require('lodash');
 
-const useLodash = _.assign({}, { a: 1 });
+var useLodash = _.assign({}, { a: 1 });
 
-const iAm = 'i_import_lodash.js';
+var iAm = 'i_import_lodash.js';
