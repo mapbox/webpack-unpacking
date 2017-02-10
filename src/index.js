@@ -3,7 +3,7 @@
  * importing
  */
 
-// import { iImportLodash } from './i_import_lodash.js';
+// var iImportLodash = require('./i_import_lodash.js');
 System.import('./i_import_lodash.js');
 
 var iAm = 'index.js';
